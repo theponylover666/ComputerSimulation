@@ -23,3 +23,15 @@ G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b\4\b4
 Q.idea/sonarlint/securityhotspotstore/e/2/e28cd1e07a918c9f004bcaf7396916d7aa87a371,b\2\b28a4c8427192085b1e208bf25761c11e9cea0cc
 Å
 Q.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,1\0\10a03f31c4dce92cb371e761ce9429428bb6c176
+A
+Lab1/Ex1_part2.py,8\1\8116d7b5a90c1bf0497e1e2a3eaa7738cf8f2db5
+A
+Lab1/Ex1_part1.py,9\9\99029ab8eb597c03735e5df7cbef6052468787b7
+w
+G.idea/sonarlint/issuestore/8/1/8116d7b5a90c1bf0497e1e2a3eaa7738cf8f2db5,4\b\4b2f855f87bf5a432780ef18ad303e46422371d6
+w
+G.idea/sonarlint/issuestore/9/9/99029ab8eb597c03735e5df7cbef6052468787b7,8\3\83c3a8df12450f81a69414d2e0ccd13ebebbf7f9
+Å
+Q.idea/sonarlint/securityhotspotstore/8/1/8116d7b5a90c1bf0497e1e2a3eaa7738cf8f2db5,0\e\0ed443981749f952f2ba04693d3f4b5f1dfd8860
+Å
+Q.idea/sonarlint/securityhotspotstore/9/9/99029ab8eb597c03735e5df7cbef6052468787b7,2\6\2642255af4daf3c5055a0c8020e8a2df4df27ebf

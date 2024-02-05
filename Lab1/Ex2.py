@@ -35,16 +35,16 @@ set_log_by_data = np.polyfit(np.log(x), y, 1) # работа с полиномо
 log_trend = [set_log_by_data[0]*np.log(x) + set_log_by_data[1] for x in x] # создание одномерного массива для логарифмического тренда
 print("${0}ln(x) + {1}$".format(*set_log_by_data))  # формула
 
-# экспоненциальный
-set_exp_by_data = np.polyfit(x, np.log(y), 1) # работа с полиномом 1 степени + логарифмирование
-exp_trend = [np.exp(set_exp_by_data[1]) * np.exp(set_exp_by_data[0] * x) for x in x] # создание одномерного массива для экспоненциального тренда
-print("${1}e^{0}x$".format(*set_exp_by_data))  # формула
+# степенной
+set_power_by_data = np.polyfit(np.log(x), np.log(y), 1)  # Линейная регрессия для логарифмированных данных
+power_trend = [np.exp(set_power_by_data[1]) * x_val ** set_power_by_data[0] for x_val in x]  # Вычисление степенной модели
+print("${1}x^{0}$".format(*set_power_by_data))  # формула
 
 # Расчёт R^2
 linear_r2 = r2_score(y, linear_trend(x))
 polinom_r2 = r2_score(y, polinom_trend(x))
 log_r2 = r2_score(y, log_trend)
-exp_r2 = r2_score(y, exp_trend)
+power_r2 = r2_score(y, power_trend)
 
 # Отображение графика
 plt.figure(figsize=(15, 15))
@@ -77,10 +77,10 @@ plt.title("Логарифмический \n$R^2=$" + str(log_r2) + "\n${0}ln(x)
 # 2 графика по горизонтали, 2 по вертикали
 plt.subplot(2, 2, 4)
 plt.scatter(dates, y, label='data')
-plt.plot(dates, exp_trend, linestyle='dashed', color="orange", label='exp trend')
+plt.plot(dates, power_trend, linestyle='dashed', color="orange", label='power trend')
 plt.grid(color="gainsboro")
 plt.legend(loc='center left', fontsize=12, bbox_to_anchor=(1, 0.5))
-plt.title("Экспоненциальный \n$R^2=$" + str(exp_r2) + "\n{1}e^({0}x)".format(*set_exp_by_data))
+plt.title("Степенной \n$R^2=$" + str(power_r2) + "\n{1}e^({0}x)".format(*set_power_by_data))
 
 fig = plt.gcf()
 fig.set_size_inches(10, 10)
