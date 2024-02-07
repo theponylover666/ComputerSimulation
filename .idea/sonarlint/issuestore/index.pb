@@ -2,8 +2,6 @@
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 ;
-Lab1/Ex1.py,e\2\e28cd1e07a918c9f004bcaf7396916d7aa87a371
-;
 Lab1/Ex2.py,1\5\1544fd3f73d4d058943af99386194717e6976757
 ^
 ..idea/inspectionProfiles/profiles_settings.xml,1\e\1e9075f5bf079c01ef2c910709e91a497d262080

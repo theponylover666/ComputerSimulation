@@ -42,9 +42,13 @@ print("${1}x^{0}$".format(*set_power_by_data))  # формула
 
 # Расчёт R^2
 linear_r2 = r2_score(y, linear_trend(x))
+print(linear_r2)
 polinom_r2 = r2_score(y, polinom_trend(x))
+print(polinom_r2)
 log_r2 = r2_score(y, log_trend)
+print(log_r2)
 power_r2 = r2_score(y, power_trend)
+print(power_r2)
 
 # Отображение графика
 plt.figure(figsize=(15, 15))
@@ -89,9 +93,10 @@ plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))  # Фор�
 plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=1))  # Интервал между метками
 
 plt.xticks(rotation=45)  # Повернуть метки дат для лучшей читаемости
+plt.xticks(fontsize=8)
+plt.yticks(fontsize=8)
 
 plt.tight_layout()  # Улучшить компоновку графиков
+plt.subplots_adjust(left=0.05, bottom=0.065,right=0.872,top=0.815,wspace=0.143,hspace=0.42)
 
 plt.show()
-
-
