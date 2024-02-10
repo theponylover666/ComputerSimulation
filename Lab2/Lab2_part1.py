@@ -35,7 +35,7 @@ axs[1].set_ylabel('Амплитуда')
 
 # График обратного преобразования Фурье
 # Здесь стоит использовать abs(IFT) чтобы избежать ComplexWarning
-axs[2].plot(abs(IFT), 'g')
+axs[2].plot(IFT, 'g')
 axs[2].set_title('Обратное преобразование Фурье (модуль)')
 axs[2].set_ylabel('Амплитуда')
 axs[2].set_xlabel('k')
