@@ -1,5 +1,6 @@
 import numpy
 from numpy import *
+import matplotlib.pyplot as plt
 import time
 
 
@@ -14,21 +15,27 @@ n = int(input("Введите количество сгенерированны�
 
 start = time.time()  # Начало отсчета времени выполнения программы
 # Создаем массив для хранения сгенерированных чисел
-randomaizer = empty(n, dtype=int64)
-randomaizer[0], randomaizer[1] = Xi_0, Xi_1  # Инициализируем первые два числа
+randomizer = empty(n, dtype=int64)
+randomizer[0], randomizer[1] = Xi_0, Xi_1  # Инициализируем первые два числа
 
 # Генерируем последовательность чисел методом Фибоначчи
 for i in range(2, n):
-    randomaizer[i] = (randomaizer[i - 1] + randomaizer[i - 2]) % m
+    randomizer[i] = (randomizer[i - 1] + randomizer[i - 2]) % m
 
 stop = time.time()  # Конец отсчета времени
-# Выводим сгенерированные числа
-print(randomaizer)
-
 print("Время :")
 # Вывод времени выполнения программы
 print(stop - start)
+if(randomizer.size < 15):
+    print(randomizer) # Выводим сгенерированные числа
 
+
+plt.hist(randomizer, bins=50, color='blue', alpha=0.7)
+plt.title('Гистограмма распределения сгенерированных чисел')
+plt.xlabel('Значение')
+plt.ylabel('Частота')
+plt.grid(True)
+plt.show()
 # Подготовка функции для проверки статистических характеристик
 def statistical_test(random_numbers, m):
     # Нормируем числа к интервалу [0, 1)
@@ -66,8 +73,8 @@ def frequency_test(random_numbers, m):
     return percentage_in_interval, frequency_condition, balance_condition
 
 # Применение тестов к сгенерированной последовательности
-mean, variance, mean_condition, variance_condition = statistical_test(randomaizer, m)
-frequency_percentage, frequency_condition, balance_condition = frequency_test(randomaizer, m)
+mean, variance, mean_condition, variance_condition = statistical_test(randomizer, m)
+frequency_percentage, frequency_condition, balance_condition = frequency_test(randomizer, m)
 
 # Вывод результатов
 print(f"Математическое ожидание: {mean}, условие выполнено: {mean_condition}")
@@ -78,7 +85,7 @@ print(f"Баланс чисел в интервалах (0; 0.5) и (0.5; 1) с�
 # Записываем числа в файл
 filename = "random_numbers.txt"  # Имя файла для сохранения
 with open(filename, "w") as file:
-    for number in randomaizer:
+    for number in randomizer:
         file.write(f"{number}\n")  # Записываем каждое число в отдельной строке
 
 print(f"Числа были сохранены в файл {filename}.")
