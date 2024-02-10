@@ -12,13 +12,9 @@ S
 Å
 Q.idea/sonarlint/securityhotspotstore/1/5/1544fd3f73d4d058943af99386194717e6976757,2\8\2895afe251389c7d20256849927998c7bb9356d0
 w
-G.idea/sonarlint/issuestore/e/2/e28cd1e07a918c9f004bcaf7396916d7aa87a371,3\b\3bfe950e444d35cb4ff8123f1fa614a6fd21e1bb
-w
 G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b\4\b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
-Å
-Q.idea/sonarlint/securityhotspotstore/e/2/e28cd1e07a918c9f004bcaf7396916d7aa87a371,b\2\b28a4c8427192085b1e208bf25761c11e9cea0cc
 Å
 Q.idea/sonarlint/securityhotspotstore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,1\0\10a03f31c4dce92cb371e761ce9429428bb6c176
 A
@@ -33,3 +29,9 @@ G.idea/sonarlint/issuestore/9/9/99029ab8eb597c03735e5df7cbef6052468787b7,8\3\83
 Q.idea/sonarlint/securityhotspotstore/8/1/8116d7b5a90c1bf0497e1e2a3eaa7738cf8f2db5,0\e\0ed443981749f952f2ba04693d3f4b5f1dfd8860
 Å
 Q.idea/sonarlint/securityhotspotstore/9/9/99029ab8eb597c03735e5df7cbef6052468787b7,2\6\2642255af4daf3c5055a0c8020e8a2df4df27ebf
+B
+Lab2/Lab2_part1.py,5\e\5e547572504d4a4e3299015c0900d98e76b81cf8
+B
+Lab2/Lab2_part2.py,2\b\2bcb0d2e5f29d4643cf169f0590ef82dbb113790
+G
+Lab2/random_numbers.txt,8\d\8d605f67fd0ac16b0e68d5ce2eeda27eb45d512c
