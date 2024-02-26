@@ -20,11 +20,15 @@ def With_Denial_Of_Service(lambda_, T_obs):
 
     # Отношение числа обслуженных к числу необслуженных заявок
     ratio = N_obs / N_otk
-    print("Вероятность обслуживания: " + "\033[1m" + str(P_obs) + "\033[0m")
-    print("Вероятность отказа: " + "\033[1m" + str(P_otk) + "\033[0m")
-    print("Число обслужанных заявок: " + "\033[1m" + str(N_obs) + "\033[0m")
-    print("Число необслужанных заявок: " + "\033[1m" + str(N_otk) + "\033[0m")
-    print("Отношение обслужанных к необслужанным заявкам: " + "\033[1m" + str(ratio) + "\033[0m" + "\n")
+
+    result = ""
+
+    result += ("Вероятность обслуживания: " + str(P_obs) + "\n")
+    result += ("Вероятность отказа: " + str(P_otk) + "\n")
+    result += ("Число обслужанных заявок: " + str(N_obs) + "\n")
+    result += ("Число необслужанных заявок: " + str(N_otk) + "\n")
+    result += ("Отношение обслужанных к необслужанным заявкам: " + str(ratio) + "\n")
+    return result
 
 def With_Limited_Queue(m, lambda_, mu):
     # Параметры системы
@@ -71,15 +75,18 @@ def With_Limited_Queue(m, lambda_, mu):
     else:
         T_SMO = L_SMO / lambda_
 
-    print("P_0: " + "\033[1m" + str(P_0) + "\033[0m")
-    print("Вероятность обслуживания: " + "\033[1m" + str(P_obs) + "\033[0m")
-    print("Вероятность отказа: " + "\033[1m" + str(P_otk) + "\033[0m")
-    print("Средняя длина очереди: " + "\033[1m" + str(L_queue) + "\033[0m")
-    print("Среднее время ожидания в очереди: " + "\033[1m" + str(T_queue) + "\033[0m")
-    print("Относительная пропускная способность: " + "\033[1m" + str(Q) + "\033[0m")
-    print("Абсолютная пропускная способность: " + "\033[1m" + str(A) + "\033[0m")
-    print("Среднее число заявок в СМО: " + "\033[1m" + str(L_SMO) + "\033[0m")
-    print("Cреднее время нахождения заявки в СМО: " + "\033[1m" + str(T_SMO) + "\033[0m" + "\n")
+    result = ""
+
+    result += ("P_0: "  + str(P_0) + "\n")
+    result += ("Вероятность обслуживания: " + str(P_obs) + "\n")
+    result += ("Вероятность отказа: " + str(P_otk) + "\n")
+    result += ("Средняя длина очереди: " + str(L_queue) + "\n")
+    result += ("Среднее время ожидания в очереди: " + str(T_queue) + "\n")
+    result += ("Относительная пропускная способность: " + str(Q) + "\n")
+    result += ("Абсолютная пропускная способность: " + str(A) + "\n")
+    result += ("Среднее число заявок в СМО: " + str(L_SMO) + "\n")
+    result += ("Cреднее время нахождения заявки в СМО: " + str(T_SMO) + "\n")
+    return result
 
 def With_Unlimited_Queue(lambda_, T_obs):
     # Параметры системы
@@ -90,18 +97,20 @@ def With_Unlimited_Queue(lambda_, T_obs):
 
     mu = 1 / T_obs
     ro = lambda_ / mu
+    result = ""
 
     #P0
     if ro >= 1:
-        print("Стационарное состояние невозможно")
-        return
+        result += "Стационарное состояние невозможно"
+        return result
     else:
         L_queue = (ro ** 2) / (1 - ro)
         T_queue = L_queue / lambda_
         L_SMO = ro / (1 - ro)
         T_SMO = L_SMO / lambda_
 
-    print("Среднее число заявок в очереди: " + "\033[1m" + str(round(L_queue,2)) + "\033[0m")
-    print("Среднее время ожидания в очереди: " + "\033[1m" + str(round(T_queue,2)) + "\033[0m")
-    print("Среднее число заявок в СМО: " + "\033[1m" + str(round(L_SMO,2)) + "\033[0m")
-    print("Среднее время нахождения заявки в СМО: " + "\033[1m" + str(round(T_SMO,2)) + "\033[0m" + "\n")
+    result += ("Среднее число заявок в очереди: " + str(round(L_queue,2)) + "\n")
+    result += ("Среднее время ожидания в очереди: " + str(round(T_queue,2)) + "\n")
+    result += ("Среднее число заявок в СМО: " + str(round(L_SMO,2)) + "\n")
+    result += ("Среднее время нахождения заявки в СМО: " + str(round(T_SMO,2)) + "\n")
+    return result

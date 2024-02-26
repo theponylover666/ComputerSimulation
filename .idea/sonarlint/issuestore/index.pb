@@ -109,3 +109,5 @@ F
 Lab3/Single_channel.py,f\e\fe811b971b43c580383ebc297dbc8cf5a0bcd485
 E
 Lab3/Multi_channel.py,5\a\5ad991ed6f0f693ccc45349f126fbbdbfcf0e715
+;
+Lab3/GUI.py,6\e\6ec7c5147974bf6ed7d47589a7fabe1413f84f09
