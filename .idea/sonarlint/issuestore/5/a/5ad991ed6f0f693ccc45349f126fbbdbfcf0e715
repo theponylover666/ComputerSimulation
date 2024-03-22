@@ -1,0 +1,13 @@
+
+zpython:S117"WRename this local variable "P_obsl" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÄÊÄßıÿÿÿÿ8¾‹¼Ş1
+ypython:S117"VRename this local variable "P_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(íÖóùÿÿÿÿ8¾‹¼Ş1
+€python:S1542"\Rename function "With_Denial_Of_Service" to match the regular expression ^[a-z_][a-z0-9_]*$.(°á«áøÿÿÿÿ8¾‹¼Ş1
+{python:S117H"XRename this local variable "L_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ññş®ùÿÿÿÿ8¾‹¼Ş1
+tpython:S117C"VRename this local variable "P_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡àŞ´8¾‹¼Ş1
+{python:S117M"XRename this local variable "T_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(š˜‰Šşÿÿÿÿ8¾‹¼Ş1
+wpython:S1542-"XRename function "With_Limited_Queue" to match the regular expression ^[a-z_][a-z0-9_]*$.(³«­¾8¾‹¼Ş1
+Gpython:S1110@"#Remove those redundant parentheses.(‘÷Õ‹ÿÿÿÿÿ8¾‹¼Ş1
+vpython:S117v"XRename this local variable "L_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(°ßÍÇ8¾‹¼Ş1
+vpython:S117s"XRename this local variable "P_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(¡í»Ş8¾‹¼Ş1
+{python:S117y"XRename this local variable "T_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(š˜‰Šşÿÿÿÿ8¾‹¼Ş1
+ypython:S1542_"ZRename function "With_Unlimited_Queue" to match the regular expression ^[a-z_][a-z0-9_]*$.(¼çøò8¾‹¼Ş1

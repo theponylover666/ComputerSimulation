@@ -1,0 +1,11 @@
+
+lpython:S1192&"HDefine a constant instead of duplicating this literal 'atm.txt' 6 times.(ּףנ‎ÿÿÿÿ8זה¸ז1
+Npython:S1481"/Remove the unused local variable "MAX_CLIENTS".(ֹץט÷8זה¸ז1
+ypython:S116"[Rename this field "accomplishedClients" to match the regular expression ^[_a-z][_a-z0-9]*$.(€צ8זה¸ז1
+ppython:S116"RRename this field "allClients" to match the regular expression ^[_a-z][_a-z0-9]*$.(§Ú®8זה¸ז1
+tpython:S117x"VRename this local variable "N_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(אƒ™ִ8זה¸ז1
+ypython:S117y"VRename this local variable "N_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(ף™גרÿÿÿÿ8זה¸ז1
+tpython:S117v"VRename this local variable "P_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ּ׀ס8זה¸ז1
+ypython:S117w"VRename this local variable "P_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(כ¹ק‏‎ÿÿÿÿ8זה¸ז1
+tpython:S117h"VRename this local variable "T_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ּ‘זי8זה¸ז1
+Hpython:S1481h")Remove the unused local variable "T_obs".(ּ‘זי8זה¸ז1

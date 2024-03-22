@@ -1,0 +1,11 @@
+
+›python:S11923"|Define a constant instead of duplicating this literal "Ğ˜Ğ½Ñ‚ĞµĞ½ÑĞ¸Ğ²Ğ½Ğ¾ÑÑ‚ÑŒ Ğ²Ñ…Ğ¾Ğ´ÑÑ‰ĞµĞ³Ğ¾ Ğ¿Ğ¾Ñ‚Ğ¾ĞºĞ°:" 6 times.(ø¸¨ò8óÈ‰½Ş1
+°python:S1192Â"Define a constant instead of duplicating this literal "Ğ˜Ğ½Ñ‚ĞµĞ½ÑĞ¸Ğ²Ğ½Ğ¾ÑÑ‚ÑŒ Ğ¾Ğ±ÑĞ»ÑƒĞ¶Ğ¸Ğ²Ğ°Ğ½Ğ¸Ñ Ğ¾Ğ´Ğ½Ğ¸Ğ¼ ĞºĞ°Ğ½Ğ°Ğ»Ğ¾Ğ¼:" 3 times.(Ù·‰¯8…›É½Ş1
+–python:S1192I"wDefine a constant instead of duplicating this literal "ĞĞ´Ğ½Ğ¾ Ğ¸Ğ»Ğ¸ Ğ¾Ğ±Ğ° Ğ¿Ğ¾Ğ»Ñ Ğ²Ğ²Ğ¾Ğ´Ğ° Ğ¿ÑƒÑÑ‚Ñ‹." 6 times.(ù¡²8ƒ‡‹½Ş1
+¹python:S1192O"”Define a constant instead of duplicating this literal "Ğ—Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ñ Ğ´Ğ¾Ğ»Ğ¶Ğ½Ñ‹ Ğ±Ñ‹Ñ‚ÑŒ Ğ¿Ğ¾Ğ»Ğ¾Ğ¶Ğ¸Ñ‚ĞµĞ»ÑŒĞ½Ñ‹Ğ¼Ğ¸ Ñ‡Ğ¸ÑĞ»Ğ°Ğ¼Ğ¸." 6 times.(º»ÏŒşÿÿÿÿ8„‡‹½Ş1
+ypython:S1192;"UDefine a constant instead of duplicating this literal "Ğ Ğ°ÑÑÑ‡Ğ¸Ñ‚Ğ°Ñ‚ÑŒ" 6 times.(¤íàñùÿÿÿÿ8óÈ‰½Ş1
+£python:S1192º"~Define a constant instead of duplicating this literal "ĞšĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ĞºĞ°Ğ½Ğ°Ğ»Ğ¾Ğ² Ğ¾Ğ±ÑĞ»ÑƒĞ¶Ğ¸Ğ²Ğ°Ğ½Ğ¸Ñ:" 3 times.(ı­Ö—üÿÿÿÿ8†›É½Ş1
+tpython:S117F"VRename this local variable "T_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(æàØ8ÿ²ö¼Ş1
+python:S117L"\Rename this local variable "T_obs_float" to match the regular expression ^[_a-z][a-z0-9_]*$.(Í‰Š±şÿÿÿÿ8ÿ²ö¼Ş1
+zpython:S117¢"VRename this local variable "T_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ØÌøÿÿÿÿ8„‡‹½Ş1
+€python:S117¨"\Rename this local variable "T_obs_float" to match the regular expression ^[_a-z][a-z0-9_]*$.(Í‰Š±şÿÿÿÿ8„‡‹½Ş1

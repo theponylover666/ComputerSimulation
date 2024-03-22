@@ -1,0 +1,17 @@
+
+tpython:S117"VRename this local variable "N_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(½’’«8““½Ş1
+tpython:S117"VRename this local variable "N_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(¶â¼ğ8““½Ş1
+tpython:S117
+"VRename this local variable "P_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ïïìÇ8““½Ş1
+ypython:S117"VRename this local variable "P_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(Öå„Äøÿÿÿÿ8““½Ş1
+opython:S117"QRename this parameter "T_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘ù«Ù8““½Ş1
+{python:S1542"\Rename function "With_Denial_Of_Service" to match the regular expression ^[a-z_][a-z0-9_]*$.(‘ù«Ù8““½Ş1
+vpython:S117>"XRename this local variable "L_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(›üÿ¯8““½Ş1
+ypython:S1174"VRename this local variable "P_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(å¯ˆËûÿÿÿÿ8““½Ş1
+ypython:S1171"VRename this local variable "P_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(á®Ğôøÿÿÿÿ8““½Ş1
+{python:S117C"XRename this local variable "T_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(š˜‰Šşÿÿÿÿ8““½Ş1
+wpython:S1542!"XRename function "With_Limited_Queue" to match the regular expression ^[a-z_][a-z0-9_]*$.(×„ë÷8““½Ş1
+vpython:S117k"XRename this local variable "L_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(Óèëİ8““½Ş1
+opython:S117["QRename this parameter "T_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(™ÒÖ¦8““½Ş1
+{python:S117l"XRename this local variable "T_queue" to match the regular expression ^[_a-z][a-z0-9_]*$.(š˜‰Šşÿÿÿÿ8““½Ş1
+ypython:S1542["ZRename function "With_Unlimited_Queue" to match the regular expression ^[a-z_][a-z0-9_]*$.(™ÒÖ¦8““½Ş1
