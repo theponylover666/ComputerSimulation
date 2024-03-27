@@ -112,15 +112,11 @@ E
 ;
 Lab3/GUI.py,6\e\6ec7c5147974bf6ed7d47589a7fabe1413f84f09
 B
-Lab3/Lab2_part2.py,d\f\dfd75d1b300bacde58ece447092c36bca6c9f065
-B
 Lab3/Lab3_part2.py,4\f\4f0fcb676de4e8a213cdcc0eeaf36608c8688fe4
 <
 Lab3/atm.txt,c\4\c4bf01ddb8d9b34bf870eb862ad2e8d344cdaad8
 C
 Lab3/input_data.txt,4\2\421e28ba6a6267e36d972855dd6d5b86afebc690
-<
-Lab3/test.py,9\2\92c09aafee9248b75f7954953b0c9299d10a7457
 
 Q.idea/sonarlint/securityhotspotstore/a/e/ae330e58c2bcc58691562c5db16b5f491c1bc0a7,e\e\ee9b3ef1a876bed67833790eb7432bb110a36fa6
 
@@ -191,8 +187,6 @@ w
 G.idea/sonarlint/issuestore/6/4/64876b8bea138a82803d0008198401e04ab468aa,d\3\d34c834095f0696feda374867b7919b9fc479801
 w
 G.idea/sonarlint/issuestore/6/2/622f26abf6e6785f3126a383da5bfa66841ddc04,f\2\f2cc115b67ae0fe43e36a068dfa26c93f2109759
-
-Q.idea/sonarlint/securityhotspotstore/9/2/92c09aafee9248b75f7954953b0c9299d10a7457,c\f\cffed43ea0ee8e30276483e8ff968ca11aff6487
 w
 G.idea/sonarlint/issuestore/f/f/ffb66ccaee2bf5543a41319233b4b7b1036ca24d,7\b\7b6512cf0a9e090bdda84aa84b3eb37c07b87dd8
 w
@@ -239,10 +233,6 @@ G.idea/sonarlint/issuestore/2/c/2cab9ad6d1ba47769a9a8630e8e241d695f2b1f1,9\e\9e
 Q.idea/sonarlint/securityhotspotstore/7/d/7df6adddb453fbd2c5560af88c9a021f1571de8e,c\1\c1d550812e0ea9cdd2f9578f187e74286ebf6aa2
 
 Q.idea/sonarlint/securityhotspotstore/7/3/73ee641ffe39019e2badeb6190f5e8debcc0bc26,8\2\8272378489ba4ee7b920cf1559d33fccfd444069
-w
-G.idea/sonarlint/issuestore/d/f/dfd75d1b300bacde58ece447092c36bca6c9f065,2\2\2223e8546e51f932f90ee9463940f4bd4eee7302
-
-Q.idea/sonarlint/securityhotspotstore/d/f/dfd75d1b300bacde58ece447092c36bca6c9f065,1\c\1c4e76308fc215044fb821bf289c22a616d989c4
 
 Q.idea/sonarlint/securityhotspotstore/6/b/6bc361fab678f74f7da63b229ace2fc9d3130980,b\8\b865a30afc0ea49246217e641d4693db7d27c76a
 

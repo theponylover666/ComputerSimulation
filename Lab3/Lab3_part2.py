@@ -1,5 +1,6 @@
 import random
 import simpy
+import Multi_channel
 
 def part2():
     def read_input_data(file_path):
@@ -40,17 +41,20 @@ def part2():
                 print(f"Всего обслужено клиентов: {self.allClients}")
                 writefile('atm.txt', f"Всего обслужено клиентов: {self.allClients}")
 
-    def client(env, name, bank_office):
+    def client(env, name, bank_office, max_queue_length):
         """Клиент приходит и обслуживается в банковском офисе"""
-        print(f"{name} прибыл в {env.now:.2f}")
-        writefile('atm.txt', f"{name} прибыл в {env.now:.2f}")
-        with bank_office.atm.request() as request:
-            yield request
-            print(f"{name} начинает обслуживание в {env.now:.2f}")
-            writefile('atm.txt', f"{name} начинает обслуживание в {env.now:.2f}")
-            yield env.process(bank_office.serve_client(name))
-            print(f"{name} покидает банк в {env.now:.2f}")
-            writefile('atm.txt', f"{name} покидает банк в {env.now:.2f}")
+        if len(bank_office.atm.queue) < max_queue_length:
+            with bank_office.atm.request() as request:
+                yield request
+                print(f"{name} начинает обслуживание в {env.now:.2f}")
+                writefile('atm.txt', f"{name} начинает обслуживание в {env.now:.2f}")
+                yield env.process(bank_office.serve_client(name))
+                print(f"{name} покидает банк в {env.now:.2f}")
+                writefile('atm.txt', f"{name} покидает банк в {env.now:.2f}")
+        else:
+            # Отказ в обслуживании из-за переполненной очереди
+            print(f"{name} получает отказ из-за полной очереди в {env.now:.2f}")
+            writefile('atm.txt', f"{name} получает отказ из-за полной очереди в {env.now:.2f}")
 
     def setup(env, num_atms, lambda_):
         """Создать банковский офис и генерировать клиентов"""
@@ -61,7 +65,7 @@ def part2():
         while True:
             yield env.timeout(random.expovariate(lambda_))
             i += 1
-            env.process(client(env, f'Клиент_{i}', bank_office))
+            env.process(client(env, f'Клиент_{i}', bank_office, MAX_CLIENTS - NUM_ATMS))
 
     def writefile(file_path, text):
         # Записываем сообщения в файл
@@ -79,6 +83,12 @@ def part2():
     env = simpy.Environment()
     env.process(setup(env, NUM_ATMS, LAMBDA))
     env.run(until=SIM_TIME)
+
+    #Подсчёт характеристик СМО
+    mu = 1 / ((MIN_SERVICE_TIME + MODE_SERVICE_TIME + MAX_SERVICE_TIME) / 3)
+    results = Multi_channel.With_Limited_Queue(NUM_ATMS, MAX_CLIENTS - NUM_ATMS, LAMBDA, mu)
+    print("Характеристики СМО: \n" + results)
+    writefile('atm.txt', "Характеристики СМО: \n" + results)
 
 def part1():
     def generate_clients(env, lambda_, service_station, serviced_clients, denied_services):
