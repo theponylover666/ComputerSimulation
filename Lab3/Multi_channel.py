@@ -44,18 +44,23 @@ def With_Denial_Of_Service(n, lambda_, mu):
 
 def With_Limited_Queue(n, m, lambda_, mu):
     # Параметры системы
+    """
+    n = 3  # количество каналов обслуживания
+    m = 5 # длина очереди
+    lambda_ = 3  # интенсивность входящего потока
+    mu = 2  # интенсивность обслуживания одним каналом
+    """
 
     # Расчет загрузки системы
     ro = lambda_ / mu
     ro_n = ro / n
 
-    sum_rho = sum([ ((ro ** k) / factorial(k)) for k in range(n + 1)])
+    sum_rho = sum([((ro ** k) / factorial(k)) for k in range(n + 1)])
 
-    # Вероятность нулевой очереди (P0)
-    if ro_n == 1:
-        P_0 = (sum_rho + ((m * (ro ** (n+1)))/(n * factorial(n)))) ** -1
+    if ro_n != 1:
+        P_0 = 1 / (sum_rho + (ro ** n) / (factorial(n) * (n - ro)) * (1 - (ro / n) ** m))
     else:
-        P_0 = (sum_rho + ((((ro ** (n + 1))) / (factorial(n) * (n - ro))) * (1 - ((ro/n) ** m)))) ** -1
+        P_0 = 1 / (sum_rho + ((ro ** n) / factorial(n)) * m)
 
     # Вероятность отказа (Pотк)
     P_otk = ((ro ** (n + m)) / ((n ** m) * (factorial(n)))) * P_0

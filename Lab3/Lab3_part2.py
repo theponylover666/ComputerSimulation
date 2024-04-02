@@ -1,5 +1,6 @@
 import random
 import simpy
+import statistics
 import Multi_channel
 
 def part2():
@@ -22,6 +23,11 @@ def part2():
     MIN_SERVICE_TIME = float(input_data[4])  # минимальное время
     MODE_SERVICE_TIME = float(input_data[5])  # наиболее вероятное время
     MAX_SERVICE_TIME = float(input_data[6])  # максимальное время
+    SINGLE_CUSTOMER_SERVICE_TIME = float(input_data[7]) # обслуживание одного клиента
+
+    # Сбор данных для анализа
+    waiting_times = []  # Время ожидания в очереди
+    system_times = []  # Время пребывания в системе
 
     class BankOffice(object):
         def __init__(self, env, num_atms):
@@ -32,11 +38,14 @@ def part2():
 
         def serve_client(self, client):
             """Процесс обслуживания клиента с треугольным временем"""
+            arrival_time = self.env.now
             service_time = random.triangular(MIN_SERVICE_TIME, MAX_SERVICE_TIME, MODE_SERVICE_TIME)
             yield self.env.timeout(service_time)
             self.allClients += 1
-            print(f"{client} обслужен за {service_time:.2f} мин. в {self.env.now:.2f}")
-            writefile('atm.txt', f"{client} обслужен за {service_time:.2f} мин. в {self.env.now:.2f}")
+            departure_time = self.env.now
+            system_times.append(departure_time - arrival_time)
+            print(f"{client} обслужен за {service_time:.2f} мин. в {departure_time:.2f}")
+            writefile('atm.txt', f"{client} обслужен за {service_time:.2f} мин. в {departure_time:.2f}")
             if self.allClients % 5 == 0:  # Показать статистику каждого 5-го клиента
                 print(f"Всего обслужено клиентов: {self.allClients}")
                 writefile('atm.txt', f"Всего обслужено клиентов: {self.allClients}")
@@ -44,8 +53,11 @@ def part2():
     def client(env, name, bank_office, max_queue_length):
         """Клиент приходит и обслуживается в банковском офисе"""
         if len(bank_office.atm.queue) < max_queue_length:
+            arrival_time = env.now
             with bank_office.atm.request() as request:
                 yield request
+                waiting_time = env.now - arrival_time
+                waiting_times.append(waiting_time)
                 print(f"{name} начинает обслуживание в {env.now:.2f}")
                 writefile('atm.txt', f"{name} начинает обслуживание в {env.now:.2f}")
                 yield env.process(bank_office.serve_client(name))
@@ -59,7 +71,6 @@ def part2():
     def setup(env, num_atms, lambda_):
         """Создать банковский офис и генерировать клиентов"""
         bank_office = BankOffice(env, num_atms)
-
         # Генерировать новых клиентов
         i = 0
         while True:
@@ -84,8 +95,13 @@ def part2():
     env.process(setup(env, NUM_ATMS, LAMBDA))
     env.run(until=SIM_TIME)
 
-    #Подсчёт характеристик СМО
-    mu = 1 / ((MIN_SERVICE_TIME + MODE_SERVICE_TIME + MAX_SERVICE_TIME) / 3)
+    average_waiting_time = statistics.mean(waiting_times) if waiting_times else 0
+    average_system_time = statistics.mean(system_times) if system_times else 0
+    print(f"Среднее время ожидания в очереди: {average_waiting_time:.2f} мин.")
+    print(f"Среднее время пребывания в системе: {average_system_time:.2f} мин.")
+
+    #Характеристики СМО
+    mu = 3 * 1 / SINGLE_CUSTOMER_SERVICE_TIME
     results = Multi_channel.With_Limited_Queue(NUM_ATMS, MAX_CLIENTS - NUM_ATMS, LAMBDA, mu)
     print("Характеристики СМО: \n" + results)
     writefile('atm.txt', "Характеристики СМО: \n" + results)
