@@ -1,10 +1,10 @@
 
-lpython:S1192'"HDefine a constant instead of duplicating this literal 'atm.txt' 7 times.(ŸÌóğıÿÿÿÿ8“‡Úúç1
-ypython:S116"[Rename this field "accomplishedClients" to match the regular expression ^[_a-z][_a-z0-9]*$.(€ö8”‡Úúç1
-ppython:S116"RRename this field "allClients" to match the regular expression ^[_a-z][_a-z0-9]*$.(§Ú®8”‡Úúç1
-upython:S117‚"VRename this local variable "N_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(àƒ™Ä8”‡Úúç1
-zpython:S117ƒ"VRename this local variable "N_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó™šâøÿÿÿÿ8”‡Úúç1
-upython:S117€"VRename this local variable "P_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÌĞñ8”‡Úúç1
-zpython:S117"VRename this local variable "P_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(ë¹÷şıÿÿÿÿ8”‡Úúç1
-tpython:S117r"VRename this local variable "T_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ì‘æé8”‡Úúç1
-Hpython:S1481r")Remove the unused local variable "T_obs".(Ì‘æé8”‡Úúç1
+gpython:S11920"HDefine a constant instead of duplicating this literal 'atm.txt' 7 times.(§•ü»8–½ıé1
+ppython:S116$"RRename this field "allClients" to match the regular expression ^[_a-z][_a-z0-9]*$.(§Ú®8‘–½ıé1
+ypython:S116%"[Rename this field "accomplishedClients" to match the regular expression ^[_a-z][_a-z0-9]*$.(€ö8‘–½ıé1
+upython:S117’"VRename this local variable "N_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(àƒ™Ä8‘–½ıé1
+zpython:S117“"VRename this local variable "N_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(ó™šâøÿÿÿÿ8‘–½ıé1
+upython:S117"VRename this local variable "P_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÌĞñ8‘–½ıé1
+zpython:S117‘"VRename this local variable "P_otk" to match the regular expression ^[_a-z][a-z0-9_]*$.(ë¹÷şıÿÿÿÿ8‘–½ıé1
+upython:S117‚"VRename this local variable "T_obs" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ì‘æé8‘–½ıé1
+Ipython:S1481‚")Remove the unused local variable "T_obs".(Ì‘æé8‘–½ıé1
