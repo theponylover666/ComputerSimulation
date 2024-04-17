@@ -54,9 +54,6 @@ class SampleApp(tk.Tk):
         # Кнопка для построения графика
         self.plot_button_CP = tk.Button(self.CP, text="Построить график", command=self.plot_graph_CP)
         self.plot_button_CP.pack()
-        # Кнопка для очистки графика
-        self.plot_delete_CP = tk.Button(self.CP, text="Очистить график", command= lambda: self.clear_graph_by_name('Задача Коши'))
-        self.plot_delete_CP.pack()
 
         # Область для графика
         self.fig_CP, self.ax_CP = plt.subplots(figsize=(12, 10))
@@ -130,10 +127,6 @@ class SampleApp(tk.Tk):
         # Кнопка для запуска расчета и отображения результатов
         self.solve_button_SODE = tk.Button(self.SODE, text="Построить график", command=self.plot_graph_SODE)
         self.solve_button_SODE.pack()
-        # Кнопка для очистки графика
-        self.plot_delete_SODE = tk.Button(self.SODE, text="Очистить график",
-                                        command=lambda: self.clear_graph_by_name('Система обыкновенных дифференциальных уравнений'))
-        self.plot_delete_SODE.pack()
 
         # Место для отображения графиков
         self.fig_SODE, self.axs_SODE = plt.subplots(2, 2, figsize=(12, 10))
@@ -200,18 +193,9 @@ class SampleApp(tk.Tk):
         self.equation_entry_SOE = tk.Entry(self.SOE)
         self.equation_entry_SOE.pack()
 
-        tk.Label(self.SOE, text="Дополнительный аргумент(только a, можно оставить пустым):").pack()
-        self.arg_entry_SOE = tk.Entry(self.SOE)
-        self.arg_entry_SOE.pack()
-
         # Кнопка для решения уравнения
         self.solve_button_SOE = tk.Button(self.SOE, text="Построить график", command=self.plot_graph_SOE)
         self.solve_button_SOE.pack()
-        # Кнопка для очистки графика
-        self.plot_delete_SOE = tk.Button(self.SOE, text="Очистить график",
-                                        command=lambda: self.clear_graph_by_name(
-                                            'Уравнение второго порядка'))
-        self.plot_delete_SOE.pack()
 
         # Место для графика
         self.fig_SOE, self.ax_SOE = plt.subplots(figsize=(12, 10))
@@ -273,11 +257,6 @@ class SampleApp(tk.Tk):
         # Кнопка для решения уравнений и отображения результатов
         self.solve_button_PP = tk.Button(self.PP, text="Построить график", command=self.plot_graph_PP)
         self.solve_button_PP.pack()
-        # Кнопка для очистки графика
-        self.plot_delete_PP = tk.Button(self.PP, text="Очистить график",
-                                        command=lambda: self.clear_graph_by_name(
-                                            'Система Хищник-Жертва'))
-        self.plot_delete_PP.pack()
 
         # Место для графика
         self.fig_PP, self.axs_PP = plt.subplots(2, 2, figsize=(12, 10))
@@ -302,27 +281,35 @@ class SampleApp(tk.Tk):
             initial_state = [x0, y0]
             time = np.arange(0, 1000, 10)
 
-            def predator_prey_system(state, t, r1, alpha1, alpha2, beta2, g1):
+            def func1(state, t, r1, alpha1, alpha2, beta2):
+                x, y = state
+                return [r1 * x - alpha1 * x * y, alpha2 * x * y - beta2 * y]
+
+            def func2(state, t, r1, alpha1, alpha2, beta2, g1):
                 x, y = state
                 return [r1 * x - alpha1 * x * y - g1 * x ** 2, alpha2 * x * y - beta2 * y]
 
-            # Решение модели
-            solution = odeint(predator_prey_system, initial_state, time, args=(r1, alpha1, alpha2, beta2, g1))
-            x, y = solution.T
+            solution1 = odeint(func1, initial_state, time, args=(r1, alpha1, alpha2, beta2))
+
+            x1, y1 = solution1.T
+
+            solution2 = odeint(func2, initial_state, time, args=(r1, alpha1, alpha2, beta2, g1))
+
+            x2, y2 = solution2.T
 
             # Отображение результатов
             # График плотности популяций во времени
             self.axs_PP[0, 0].clear()
-            self.axs_PP[0, 0].plot(time, x, label='Плотность "Жертвы" x(t)')
-            self.axs_PP[0, 0].plot(time, y, label='Плотность "Хищника" y(t)')
-            self.axs_PP[0, 0].set_title('Плотность населения с течением времени')
+            self.axs_PP[0, 0].plot(time, x1, label='Плотность "Жертвы" x(t)')
+            self.axs_PP[0, 0].plot(time, y1, label='Плотность "Хищника" y(t)')
+            self.axs_PP[0, 0].set_title('Плотность с течением времени')
             self.axs_PP[0, 0].set_xlabel('Время')
             self.axs_PP[0, 0].set_ylabel('Плотность')
             self.axs_PP[0, 0].legend()
 
             # Фазовый портрет без конкуренции
             self.axs_PP[0, 1].clear()
-            self.axs_PP[0, 1].plot(x, y)
+            self.axs_PP[0, 1].plot(x1, y1)
             self.axs_PP[0, 1].set_title('Фазовый портрет без конкуренции')
             self.axs_PP[0, 1].set_xlabel('Плотность "Жертвы" x')
             self.axs_PP[0, 1].set_ylabel('Плотность "Хищника" y')
@@ -330,16 +317,16 @@ class SampleApp(tk.Tk):
             # Повторение графиков с "конкуренцией"
             # График плотности популяций во времени с учетом конкуренции
             self.axs_PP[1, 0].clear()
-            self.axs_PP[1, 0].plot(time, x, label='Плотность "Жертвы" x(t) с конкуренцией')
-            self.axs_PP[1, 0].plot(time, y, label='Плотность "Хищника" y(t) с конкуренцией')
-            self.axs_PP[1, 0].set_title('Плотность населения с течением времени с конкуренцией')
+            self.axs_PP[1, 0].plot(time, x2, label='Плотность "Жертвы" x(t) с конкуренцией')
+            self.axs_PP[1, 0].plot(time, y2, label='Плотность "Хищника" y(t) с конкуренцией')
+            self.axs_PP[1, 0].set_title('Плотность с течением времени с конкуренцией')
             self.axs_PP[1, 0].set_xlabel('Время')
             self.axs_PP[1, 0].set_ylabel('Плотность')
             self.axs_PP[1, 0].legend()
 
             # Фазовый портрет с учетом конкуренции
             self.axs_PP[1, 1].clear()
-            self.axs_PP[1, 1].plot(x, y)
+            self.axs_PP[1, 1].plot(x2, y2)
             self.axs_PP[1, 1].set_title('Фазовый портрет с конкуренцией')
             self.axs_PP[1, 1].set_xlabel('Плотность "Жертвы" x с конкуренцией')
             self.axs_PP[1, 1].set_ylabel('Плотность "Хищника" y с конкуренцией')
@@ -355,15 +342,6 @@ class SampleApp(tk.Tk):
             tk.messagebox.showerror("Ошибка деления на ноль", f"Произошла ошибка деления на ноль: {zde}")
         except Exception as e:
             tk.messagebox.showerror("Неизвестная ошибка", f"Произошла неизвестная ошибка: {e}")
-
-    def clear_graph_by_name(self, graph_name):
-        # Проверяем, существует ли график с таким названием
-        if graph_name in self.graphs:
-            graph_info = self.graphs[graph_name]
-            graph_info['axes'].clear()  # Очистка осей
-            graph_info['canvas'].draw()  # Обновление канваса
-        else:
-            tk.messagebox.showinfo(f"График с названием '{graph_name}' не найден.")
 
 def task():
     app = SampleApp()
