@@ -19,7 +19,7 @@ async def client_task(host, port):
 
 async def run_clients(num_clients):
     host = 'povt-cluster.tstu.tver.ru'
-    port = 44322
+    port = 44321
     tasks = [client_task(host, port) for _ in range(num_clients)]
     start_time = time.time()
     response_times = await asyncio.gather(*tasks)
